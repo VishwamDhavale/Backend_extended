@@ -32,11 +32,15 @@ const sampleComments = [
   },
 ]
 
-export default function CommentSection({ videoId }) {
+interface CommentSectionProps {
+  videoId: string
+}
+
+export default function CommentSection({ videoId }: CommentSectionProps) {
   const [comments, setComments] = useState(sampleComments)
   const [newComment, setNewComment] = useState('')
 
-  const handleSubmitComment = (e) => {
+  const handleSubmitComment = (e: React.FormEvent) => {
     e.preventDefault()
     if (!newComment.trim()) return
 

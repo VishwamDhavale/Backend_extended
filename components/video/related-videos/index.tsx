@@ -23,7 +23,11 @@ const sampleRelatedVideos = [
   },
 ]
 
-export default function RelatedVideos({ currentVideoId }) {
+interface RelatedVideosProps {
+  currentVideoId: string
+}
+
+export default function RelatedVideos({ currentVideoId }: RelatedVideosProps) {
   return (
     <div className="space-y-4">
       {sampleRelatedVideos.map((video) => (
